@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  newapi-status-embed:
+    image: node:20-alpine
+    container_name: newapi-status-embed
+    working_dir: /app
+    restart: unless-stopped
+    env_file:
+      - .env
+    command: sh -c "npm install --omit=dev && node server.js"
+    volumes:
+      - ./:/app
+    ports:
+      - "127.0.0.1:8787:8787"

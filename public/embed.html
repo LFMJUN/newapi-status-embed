@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模型状态监控</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <main class="embed-panel">
+        <header class="panel-header">
+          <div class="hero-copy">
+            <p class="eyebrow">实时观测</p>
+            <h1 id="title">模型状态监控</h1>
+            <p class="subtitle" id="subtitle">基于 New API 日志聚合的实时模型健康视图</p>
+            <div class="hero-stats">
+              <div class="hero-stat hero-stat-primary">
+                <span class="hero-stat-label">模型数量</span>
+                <strong class="hero-stat-value" id="modelCount">--</strong>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-label">总请求数</span>
+                <strong class="hero-stat-value" id="requestTotal">--</strong>
+              </div>
+            </div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-row meta-row-strong">
+              <span>刷新</span>
+              <strong><span id="countdown">--</span> 秒</strong>
+            </div>
+            <div class="meta-row">
+              <span>更新时间</span>
+              <strong id="updatedAt">--</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="toolbar">
+          <div class="segmented" id="windowSwitcher"></div>
+        </section>
+
+        <section id="stateMessage" class="state-message loading">正在加载实时状态...</section>
+        <section id="cards" class="cards" hidden></section>
+      </main>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="status-card">
+        <div class="status-accent"></div>
+        <div class="card-top">
+          <div>
+            <div class="card-title-row">
+              <span class="status-dot"></span>
+              <h2 class="model-name"></h2>
+              <span class="status-pill"></span>
+            </div>
+            <p class="card-subtitle"></p>
+          </div>
+          <div class="metric-grid">
+            <div>
+              <span class="metric-label">成功率</span>
+              <strong class="metric-value metric-success"></strong>
+            </div>
+            <div>
+              <span class="metric-label">请求数</span>
+              <strong class="metric-value metric-total"></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-block">
+          <div class="timeline"></div>
+          <div class="timeline-labels">
+            <span class="timeline-start"></span>
+            <span class="timeline-middle"></span>
+            <span class="timeline-end"></span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <div id="tooltip" class="tooltip" hidden></div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+  </html>
