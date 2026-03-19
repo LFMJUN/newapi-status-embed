@@ -10,6 +10,10 @@
 - 你想做一个独立的状态页子站
 - 你想把状态页嵌入到主站的 `/about` 或其他页面
 
+## Demo
+
+![0d072174bfff1c0759810b8a5a902b44](https://img.act0r.net/https://raw.githubusercontent.com/LFMJUN/ilovekg/main/0d072174bfff1c0759810b8a5a902b44.webp)
+
 ## 功能特性
 
 - 独立的 `/embed` 嵌入页
@@ -126,7 +130,3 @@ docker compose restart
 
 - 配置 `NEWAPI_MODEL_LIST_API_KEY`
 - 或者直接用 `DISPLAY_MODELS` 指定模型白名单
-
-## Demo
-
-![0d072174bfff1c0759810b8a5a902b44](https://img.act0r.net/https://raw.githubusercontent.com/LFMJUN/ilovekg/main/0d072174bfff1c0759810b8a5a902b44.webp)
